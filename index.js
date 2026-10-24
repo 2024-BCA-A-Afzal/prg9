@@ -10,17 +10,19 @@ function StudentCard(props) {
           height: "180px",
           objectFit: "cover"
         }}
-        onError={(e) => {
-          e.currentTarget.src =
-            "https://placehold.co/300x180?text=Student";
-        }}
       />
 
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
-        <p className="card-text">Register No: {props.registerNo}</p>
-        <p className="card-text">Department: {props.department}</p>
-        <p className="card-text">Marks: {props.marks}</p>
+        <p className="card-text">
+          Register No: {props.registerNo}
+        </p>
+        <p className="card-text">
+          Department: {props.department}
+        </p>
+        <p className="card-text">
+          Marks: {props.marks}
+        </p>
       </div>
     </div>
   );
@@ -29,7 +31,9 @@ function StudentCard(props) {
 function App() {
   return (
     <div className="container mt-4">
-      <h2 className="text-center mb-4">Student Marks Card</h2>
+      <h2 className="text-center mb-4">
+        Student Marks Card
+      </h2>
 
       <div className="d-flex flex-wrap justify-content-center">
         <StudentCard
@@ -37,7 +41,7 @@ function App() {
           registerNo="23BCA001"
           department="BCA"
           marks="485"
-          image="https://placehold.co/300x180?text=Arun+Kumar"
+          image="https://raw.githubusercontent.com/2024-BCA-A-Afzal/prg9/main/rjs-prg9-main/images1.jpg"
         />
 
         <StudentCard
@@ -45,7 +49,7 @@ function App() {
           registerNo="23BCA002"
           department="BCA"
           marks="450"
-          image="https://placehold.co/300x180?text=Rahul"
+          image="https://raw.githubusercontent.com/2024-BCA-A-Afzal/prg9/main/rjs-prg9-main/image2.jpg"
         />
 
         <StudentCard
@@ -53,7 +57,7 @@ function App() {
           registerNo="23BCA003"
           department="BCA"
           marks="470"
-          image="https://placehold.co/300x180?text=Afzal"
+          image="https://raw.githubusercontent.com/2024-BCA-A-Afzal/prg9/main/rjs-prg9-main/image3.jpg"
         />
       </div>
     </div>
