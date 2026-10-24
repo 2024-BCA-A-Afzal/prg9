@@ -1,13 +1,21 @@
 
 function StudentCard(props) {
   return (
-    <div className="card m-3" style={{ width: "18rem" }}>
+    <div className="card m-3 shadow" style={{ width: "18rem" }}>
       <img
         src={props.image}
         className="card-img-top"
         alt={props.name}
-        style={{ height: "180px", objectFit: "cover" }}
+        style={{
+          height: "180px",
+          objectFit: "cover"
+        }}
+        onError={(e) => {
+          e.currentTarget.src =
+            "https://placehold.co/300x180?text=Student";
+        }}
       />
+
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">Register No: {props.registerNo}</p>
@@ -29,7 +37,7 @@ function App() {
           registerNo="23BCA001"
           department="BCA"
           marks="485"
-          image="./images/student1.jpg"
+          image="https://placehold.co/300x180?text=Arun+Kumar"
         />
 
         <StudentCard
@@ -37,7 +45,7 @@ function App() {
           registerNo="23BCA002"
           department="BCA"
           marks="450"
-          image="./images/student2.jpg"
+          image="https://placehold.co/300x180?text=Rahul"
         />
 
         <StudentCard
@@ -45,7 +53,7 @@ function App() {
           registerNo="23BCA003"
           department="BCA"
           marks="470"
-          image="./images/student3.jpg"
+          image="https://placehold.co/300x180?text=Afzal"
         />
       </div>
     </div>
