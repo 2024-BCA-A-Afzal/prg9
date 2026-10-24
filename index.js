@@ -6,10 +6,11 @@ function StudentCard(props) {
         src={props.image}
         className="card-img-top"
         alt={props.name}
+        style={{ height: "180px", objectFit: "cover" }}
       />
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
-        <p className="card-text">Roll No: {props.rollNo}</p>
+        <p className="card-text">Register No: {props.registerNo}</p>
         <p className="card-text">Department: {props.department}</p>
         <p className="card-text">Marks: {props.marks}</p>
       </div>
@@ -20,35 +21,35 @@ function StudentCard(props) {
 function App() {
   return (
     <div className="container mt-4">
-      <h2>Student Marks Card</h2>
+      <h2 className="text-center mb-4">Student Marks Card</h2>
 
-      <div className="row">
+      <div className="d-flex flex-wrap justify-content-center">
         <StudentCard
-          name="Afzal"
-          rollNo="101"
+          name="Arun Kumar"
+          registerNo="23BCA001"
           department="BCA"
-          marks="90"
-          image="https://placehold.co/300x200?text=Afzal"
+          marks="485"
+          image="./images/student1.jpg"
         />
 
         <StudentCard
           name="Rahul"
-          rollNo="102"
+          registerNo="23BCA002"
           department="BCA"
-          marks="85"
-          image="https://placehold.co/300x200?text=Rahul"
+          marks="450"
+          image="./images/student2.jpg"
         />
 
         <StudentCard
-          name="Arun"
-          rollNo="103"
+          name="Afzal"
+          registerNo="23BCA003"
           department="BCA"
-          marks="95"
-          image="https://placehold.co/300x200?text=Arun"
+          marks="470"
+          image="./images/student3.jpg"
         />
       </div>
     </div>
   );
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById("root"));
