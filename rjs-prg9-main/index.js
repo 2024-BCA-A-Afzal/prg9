@@ -1,59 +1,56 @@
 
 function StudentCard(props) {
   return (
-    <div className="col-md-4 mb-4">
-      <div className="card">
-        <img
-          src={props.image}
-          className="card-img-top"
-          alt={props.name}
-        />
-        <div className="card-body">
-          <h5 className="card-title"></h5>
-          <p><b>Name:</b> {props.name}</p>
-          <p><b>Reg No:</b> {props.regno}</p>
-          <p><b>Department:</b> {props.department}</p>
-          <p><b>Marks:</b> {props.marks}</p>
-        </div>
+    <div className="card m-3 shadow" style={{ width: "18rem" }}>
+      <img
+        src={props.image}
+        className="card-img-top"
+        alt={props.name}
+        style={{ height: "180px", objectFit: "cover" }}
+      />
+
+      <div className="card-body">
+        <h5 className="card-title">{props.name}</h5>
+        <p className="card-text">Register No: {props.registerNo}</p>
+        <p className="card-text">Department: {props.department}</p>
+        <p className="card-text">Marks: {props.marks}</p>
       </div>
     </div>
   );
 }
 
-// Create the React Root.
-const root = ReactDOM.createRoot(
-  document.getElementById("root")
-);
+function App() {
+  return (
+    <div className="container mt-4">
+      <h2 className="text-center mb-4">Student Marks Card</h2>
 
-// Render three StudentCard components.
-root.render(
-  <div className="container mt-4">
-    <div className="row">
+      <div className="d-flex flex-wrap justify-content-center">
+        <StudentCard
+          name="Arun Kumar"
+          registerNo="23BCA001"
+          department="BCA"
+          marks="485"
+          image="./rjs-prg9-main/images1.jpg"
+        />
 
-      <StudentCard
-        image="images1.jpg"
-        name="Rahul"
-        regno="101"
-        department="BCA"
-        marks="92"
-      />
+        <StudentCard
+          name="Rahul"
+          registerNo="23BCA002"
+          department="BCA"
+          marks="450"
+          image="./rjs-prg9-main/image2.jpg"
+        />
 
-      <StudentCard
-        image="image2.jpg"
-        name="Harish"
-        regno="102"
-        department="B.Sc CS"
-        marks="88"
-      />
-
-      <StudentCard
-        image="image3.jpg"
-        name="Arun"
-        regno="103"
-        department="B.Com"
-        marks="95"
-      />
-
+        <StudentCard
+          name="Afzal"
+          registerNo="23BCA003"
+          department="BCA"
+          marks="470"
+          image="./rjs-prg9-main/image3.jpg"
+        />
+      </div>
     </div>
-  </div>
-);
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
